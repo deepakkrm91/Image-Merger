@@ -2,14 +2,17 @@ import tkinter as tk
 from PIL import Image
 import os
 
+# Specify the path of the first image
 first_image_path = 'C:/Users/user/Downloads/New folder (7)/New folder (3)/New folder (3)/New folder (2)/2/New folder/WATGZNUUTJ8GHDEX.jpg'
 first_image = Image.open(first_image_path)
 
+# Specify the directory path where the second set of images are located
 second_folder_path = 'C:/Users/user/Downloads/New folder (7)/New folder (3)/New folder (3)/New folder (2)/2'
 image_files = os.listdir(second_folder_path)
 
-image_files = [f for f in image_files if f.endswith('.jpg')]  # Only include JPG files
+image_files = [f for f in image_files if f.endswith('.jpg')]
 
+# Iterate through each image file in the second folder
 for image_file in image_files:
     image_path = os.path.join(second_folder_path, image_file)
     image = Image.open(image_path)
